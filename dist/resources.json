@@ -1,0 +1,60 @@
+{
+    "resources": [
+        {
+            "name": "utils/jszip.js"
+        },
+        {
+            "name": "utils/xlsx.js"
+        },
+        {
+            "name": "utils/FioriComponentHelper.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/MainView.controller.js"
+        },
+        {
+            "name": "view/MainView.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "services/Services.js"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "model/AppJsonModel.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

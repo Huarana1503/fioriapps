@@ -1,0 +1,76 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:layout="sap.ui.layout" 
+xmlns:semantic="sap.f.semantic" 
+xmlns="sap.m" xmlns:u="sap.ui.unified"
+controllerName="raizencmv.controller.MainView" 
+xmlns:fb="sap.ui.comp.filterbar" 
+xmlns:l="sap.ui.layout" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+height="100%">
+	<Page id="idPage" backgroundDesign="Solid" showNavButton="true" navButtonPress="onBack" title="{i18n>title}">
+		<headerContent>
+		<!--<DatePicker id="DP10" placeholder="Ingrese Fecha" valueFormat="MM.yyyy" displayFormat="MM-y" change="handleChange" class="sapUiSmallMarginBottom"/>-->
+			<MultiInput width="10rem" 
+					id="multiInput"
+			suggestionItems="{
+				path: 'ProveedoresModel>/Name',
+				sorter: { path: 'Name' }
+			}"
+			showValueHelp="true" tokenUpdate="onTokenUpdate">
+			<core:Item key="{ProveedoresModel>/Key}" text="{ProveedoresModel>/Name}" />
+		</MultiInput>
+	
+		</headerContent>
+		<VBox visible="{MatchCode>/ViewApp}">
+			<Table id="idTableAjusteBS" inset="false" items="{ path:'AppJsonModel>/cmvList' }" busyIndicatorDelay="0" busy="{CebeList>/Busy}"
+				growing="true" growingScrollToLoad="true">
+				<infoToolbar>
+					<OverflowToolbar>
+						<Label id="idLabelRegistros"/>
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column demandPopin="true">
+						<Text text="{i18n>cebe}"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="{i18n>center}"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="{i18n>group}"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="{i18n>material}"/>
+					</Column>
+					<Column demandPopin="true">
+						<Text text="{i18n>cmvUnit}"/>
+					</Column>
+						<Column demandPopin="true">
+						<Text text="{i18n>cmvotrosCostos}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{AppJsonModel>CEBE}"/>
+							<Text text="{AppJsonModel>Centro}"/>
+							<Text text="{AppJsonModel>Grupo}"/>
+							<Text text="{AppJsonModel>Material}"/>
+							<Text text="{AppJsonModel>CMVUnit}"/>
+							<Text text="{AppJsonModel>OtrosCostos}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</VBox>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<u:FileUploader id="fileUploader" name="myFileUpload" buttonOnly="true" change="onUploadFile" buttonText="{i18n>upload}"
+					icon="sap-icon://upload"/>
+				<Button text="{i18n>guardar}" icon="sap-icon://save" press="onGuardar"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

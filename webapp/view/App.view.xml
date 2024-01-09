@@ -1,0 +1,6 @@
+<mvc:View controllerName="raizencmv.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+        <mvc:XMLView viewName="raizencmv.view.MainView"></mvc:XMLView>
+    </App>
+</mvc:View>
